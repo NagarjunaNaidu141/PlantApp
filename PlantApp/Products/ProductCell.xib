@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="gTV-IL-0wX" customClass="ProductCell" customModule="PlantApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="135" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="135" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJw-ts-TPx">
+                        <rect key="frame" x="5" y="179" width="125" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemOrangeColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLO-uj-1cf">
+                        <rect key="frame" x="5" y="138" width="125" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemYellowColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-7f-eGe">
+                        <rect key="frame" x="5" y="9.9999999999999982" width="125" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemPurpleColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rf7-7f-eGe" secondAttribute="trailing" constant="5" id="70i-SY-Sz0"/>
+                <constraint firstItem="oLO-uj-1cf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Icq-l7-3UX"/>
+                <constraint firstItem="oLO-uj-1cf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="JVM-Ta-9fo"/>
+                <constraint firstAttribute="trailing" secondItem="GJw-ts-TPx" secondAttribute="trailing" constant="5" id="KA3-jA-47P"/>
+                <constraint firstItem="rf7-7f-eGe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="NWO-Rv-41f"/>
+                <constraint firstItem="rf7-7f-eGe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="PzZ-Vw-4Eg"/>
+                <constraint firstItem="oLO-uj-1cf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rf7-7f-eGe" secondAttribute="bottom" constant="10" id="RKa-fK-Fel"/>
+                <constraint firstItem="GJw-ts-TPx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="U3Y-VP-Dzm"/>
+                <constraint firstItem="GJw-ts-TPx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="aEO-mp-hoO"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="GJw-ts-TPx" secondAttribute="bottom" constant="10" id="bAr-8Q-Coh"/>
+                <constraint firstItem="GJw-ts-TPx" firstAttribute="top" secondItem="oLO-uj-1cf" secondAttribute="bottom" constant="20" id="mXg-mZ-59q"/>
+                <constraint firstAttribute="trailing" secondItem="oLO-uj-1cf" secondAttribute="trailing" constant="5" id="orf-cx-5DQ"/>
+                <constraint firstItem="rf7-7f-eGe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sZc-1T-JLY"/>
+            </constraints>
+            <size key="customSize" width="135" height="282"/>
+            <connections>
+                <outlet property="categoryLabel" destination="GJw-ts-TPx" id="e1O-02-n1P"/>
+                <outlet property="priceLable" destination="oLO-uj-1cf" id="OU7-5G-ljE"/>
+                <outlet property="titleLable" destination="rf7-7f-eGe" id="HvD-Cd-hTY"/>
+            </connections>
+            <point key="canvasLocation" x="159.54198473282443" y="17.605633802816904"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

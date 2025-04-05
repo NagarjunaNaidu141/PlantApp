@@ -32,6 +32,9 @@ class CreateAccountViewController: UIViewController {
         passwordVisibleButton.setImage(UIImage(systemName: imageName), for: .normal)
         
     }
+    @IBAction func backToSignUpTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func visibilityConformPassword(sender: UIButton) {
         isPasswordVisible1.toggle()
         confirmPasswordTextField.isSecureTextEntry = !isPasswordVisible1
