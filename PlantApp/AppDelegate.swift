@@ -6,17 +6,41 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    //var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.isEnabled = true
+       // window = UIWindow(frame: UIScreen.main.bounds)
+        //rootViewCon()
         return true
     }
 
+//    func rootViewCon() {
+//        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+//        if isLoggedIn{
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let rootViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//            //window?.rootViewController?.present(rootViewController, animated: true, completion: nil)
+//
+//           window?.rootViewController = rootViewController
+//      window?.makeKeyAndVisible()
+//          
+//        }else {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let rootViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarV
+//            //window?.rootViewController?.present(rootViewController, animated: true, completion: nil)
+//
+//            window?.rootViewController = rootViewController
+//            window?.makeKeyAndVisible()
+//        }
+//        
+//    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -30,7 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+    
+    
 
 }
 

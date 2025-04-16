@@ -52,22 +52,28 @@ class CreateAccountViewController: UIViewController {
             showAlert("Enter valid email address")
             return
         }
-        if !(isValidPassword(password: password)){
-            showAlert( "Password should be atleast 8 characters long,1 upppercase, 1 lowercase, 1 digit")
-            return
-        }
+//        if !(isValidPassword(password: password)){
+//            showAlert( "Password should be atleast 8 characters long,1 upppercase, 1 lowercase, 1 digit")
+//            return
+//        }
         if password != conformPassword{
             showAlert("Password does not match")
             return
         }
-        print("sinup successful")
-        errorLabel.isHidden = true
+//        print("sinup successful")
+//        errorLabel.isHidden = true
+        postSignup(name: "NewUser1", email: email, password: password)
     }
     
-    func showAlert(_ message: String){
-        errorLabel.isHidden = false
-            errorLabel.text = message
-      
+//    func showAlert(_ message: String){
+//        errorLabel.isHidden = false
+//            errorLabel.text = message
+//      
+//    }
+    func showAlert(_ messgae: String){
+        let alert = UIAlertController(title: "Alert", message: messgae, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
     
     func isValidateEmail(email: String) -> Bool {
@@ -79,5 +85,64 @@ class CreateAccountViewController: UIViewController {
         let passwordRegex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@!#$&^*]).{8,}$"
         return NSPredicate(format: "SELF MATCHES %@",passwordRegex).evaluate(with: password)
     }
+    // MARK: - Signup API Call
+        func postSignup(name: String, email: String, password: String) {
+            guard let url = URL(string: "https://api.escuelajs.co/api/v1/users/") else {
+                showAlert("❌ Invalid signup URL")
+                return
+            }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            let signupData: [String: Any] = [
+                "name": name,
+                "email": email,
+                "password": password,
+               "avatar": "https://i.pravatar.cc/150?img=\(Int.random(in: 1...70))"
+            ]
+
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: signupData, options: [])
+                request.httpBody = jsonData
+            } catch {
+                showAlert("❌ Failed to encode signup data")
+                return
+            }
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        self.showAlert("⚠️ Signup failed: \(error.localizedDescription)")
+                        return
+                    }
+
+                    guard let httpResponse = response as? HTTPURLResponse else {
+                        self.showAlert("⚠️ Invalid server response")
+                        return
+                    }
+
+                    print("📬 Status Code: \(httpResponse.statusCode)")
+                    
+                    if let data = data,
+                       let body = String(data: data, encoding: .utf8) {
+                        print("📨 Response: \(body)")
+                    }
+
+                    if httpResponse.statusCode == 201 {
+                        self.errorLabel.isHidden = true
+                        print("✅ Signup successful!")
+
+                        // Navigate to Login screen
+                        self.navigationController?.popViewController(animated: true)
+                    } else {
+                        self.showAlert("⚠️ Signup failed. Try a different email.")
+                    }
+                }
+            }
+
+            task.resume()
+        }
     
 }

@@ -37,6 +37,7 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView1.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
             let product = products[indexPath.item]
+            cell.backgroundColor = .red
             cell.configure(with: product)
             return cell
         }
@@ -88,4 +89,28 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
             task.resume()
             
         }
+    
+    private func loadImage(from url: String) -> UIImage? {
+        
+        guard let url = URL(string: url) else {
+            return UIImage(named: "plant")
+        }
+        Task {
+            if let loadedImage = await downloadImage(from: url) {
+                return loadedImage
+            }
+            return UIImage(named: "plant")!
+        }
+        return UIImage(named: "plant")
+    }
+    
+    private func downloadImage(from url: URL) async -> UIImage? {
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return UIImage(data: data)
+        } catch {
+            print("Failed to download image:", error)
+            return UIImage(named: "default")
+        }
+    }
     }
