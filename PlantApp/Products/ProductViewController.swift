@@ -104,6 +104,9 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
         return UIImage(named: "plant")
     }
     
+    
+
+    
     private func downloadImage(from url: URL) async -> UIImage? {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)

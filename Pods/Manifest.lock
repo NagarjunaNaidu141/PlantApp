@@ -39,9 +39,11 @@ PODS:
     - IQKeyboardCore
   - IQTextView (1.0.5):
     - IQKeyboardToolbar/Placeholderable
+  - Kingfisher (8.3.2)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - Kingfisher
 
 SPEC REPOS:
   trunk:
@@ -53,6 +55,7 @@ SPEC REPOS:
     - IQKeyboardToolbarManager
     - IQTextInputViewNotification
     - IQTextView
+    - Kingfisher
 
 SPEC CHECKSUMS:
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
@@ -63,7 +66,8 @@ SPEC CHECKSUMS:
   IQKeyboardToolbarManager: 6c693c8478d6327a7ef2107528d29698b3514dbb
   IQTextInputViewNotification: f5e954d8881fd9808b744e49e024cc0d4bcfe572
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
+  Kingfisher: 0621d0ac0c78fecb19f6dc5303bde2b52abaf2f5
 
-PODFILE CHECKSUM: 2eb9f5d977eeca8e5e501d63bc4286f5d222d0f3
+PODFILE CHECKSUM: 759ad26012512357f73fbf88dd87d84fb5d03ac3
 
 COCOAPODS: 1.16.2

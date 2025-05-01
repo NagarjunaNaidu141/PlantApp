@@ -18,10 +18,9 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="20L-9x-IjR">
-                        <rect key="frame" x="42.666666666666657" y="15" width="50" height="50"/>
+                        <rect key="frame" x="0.0" y="15" width="135" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="1Ox-Wg-ub5"/>
-                            <constraint firstAttribute="width" constant="50" id="puY-L8-Y6V"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJw-ts-TPx">
@@ -46,21 +45,22 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="20L-9x-IjR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="5jn-sX-BP4"/>
                 <constraint firstAttribute="trailing" secondItem="rf7-7f-eGe" secondAttribute="trailing" constant="5" id="70i-SY-Sz0"/>
-                <constraint firstItem="20L-9x-IjR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="8qc-ic-bbg"/>
+                <constraint firstAttribute="trailing" secondItem="20L-9x-IjR" secondAttribute="trailing" id="DXd-tU-9gT"/>
                 <constraint firstItem="oLO-uj-1cf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Icq-l7-3UX"/>
                 <constraint firstItem="oLO-uj-1cf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="JVM-Ta-9fo"/>
                 <constraint firstAttribute="trailing" secondItem="GJw-ts-TPx" secondAttribute="trailing" constant="5" id="KA3-jA-47P"/>
                 <constraint firstItem="rf7-7f-eGe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="NWO-Rv-41f"/>
                 <constraint firstItem="oLO-uj-1cf" firstAttribute="top" secondItem="rf7-7f-eGe" secondAttribute="bottom" constant="20" id="QXq-5O-HYP"/>
                 <constraint firstItem="GJw-ts-TPx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="U3Y-VP-Dzm"/>
+                <constraint firstItem="20L-9x-IjR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vaj-bh-qQk"/>
                 <constraint firstItem="GJw-ts-TPx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="aEO-mp-hoO"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GJw-ts-TPx" secondAttribute="bottom" constant="10" id="bAr-8Q-Coh"/>
                 <constraint firstItem="GJw-ts-TPx" firstAttribute="top" secondItem="oLO-uj-1cf" secondAttribute="bottom" constant="20" id="mXg-mZ-59q"/>
                 <constraint firstAttribute="trailing" secondItem="oLO-uj-1cf" secondAttribute="trailing" constant="5" id="orf-cx-5DQ"/>
                 <constraint firstItem="rf7-7f-eGe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sZc-1T-JLY"/>
                 <constraint firstItem="rf7-7f-eGe" firstAttribute="top" secondItem="20L-9x-IjR" secondAttribute="bottom" constant="20" id="v98-K4-kps"/>
+                <constraint firstItem="20L-9x-IjR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="wTH-yE-YgB"/>
             </constraints>
             <size key="customSize" width="135" height="282"/>
             <connections>
@@ -74,10 +74,10 @@
     </objects>
     <resources>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
