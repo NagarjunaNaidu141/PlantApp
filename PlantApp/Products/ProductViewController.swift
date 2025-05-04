@@ -17,18 +17,16 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
     var products = [ProductModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView1.register(ProductCell.nib(), forCellWithReuseIdentifier: ProductCell.identifier)
         collectionView1.delegate = self
         collectionView1.dataSource = self
         
         callProductsAPI()
-//        if let category = selectedCategory {
-//            // Assuming 'allProducts' contains all products fetched from the API
-//            products = products.filter { $0.category.id == category.id }
-//            collectionView1.reloadData()
-//        }
+
     }
-        
+       
+   
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             print(products.count)
             return products.count
@@ -37,7 +35,7 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView1.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
             let product = products[indexPath.item]
-            cell.backgroundColor = .red
+            cell.backgroundColor = .white
             cell.configure(with: product)
             return cell
         }

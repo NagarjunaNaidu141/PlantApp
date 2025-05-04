@@ -35,7 +35,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         print(item.name ?? "")
         cell.titleLable.text = item.name
         // cell.detailTextLabel?.text = item.slug
-        cell.backgroundColor = .red
+        cell.backgroundColor = .white
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

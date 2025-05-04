@@ -8,28 +8,78 @@
 import UIKit
 
 class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    var product: ProductModel?
-
-    @IBOutlet weak var label1: UILabel!
     
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label2: UILabel!
+    
+    
+    
+    var product: ProductModel?
+    var timer: Timer?
+    var currentIndex: Int = 0
+    
+    @IBOutlet weak var productTitle: UILabel!
+    
+    @IBOutlet weak var productCategoryName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    //@IBOutlet weak var cartButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         if let product = product {
-            label1.text = product.title
-            label2.text = "$\(product.price)"
-            label3.text = product.category.name
-           
-            
+            productTitle.text = product.title
+            productPrice.text = "$\(product.price)"
+            productCategoryName.text = product.category.name
+            pageControl.numberOfPages = product.images.count
+            pageControl.currentPage = 0
         }
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
         imageCollectionView.register(HorizontalImageScroll.nib(), forCellWithReuseIdentifier: HorizontalImageScroll.identifier)
+        if let layout = imageCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+        }
+        imageCollectionView.isPagingEnabled = true
+        startAutoScroll()
         
         
+    }
+    
+    func startAutoScroll(){
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
+    }
+    @objc func scrollAutomatically(){
+        
+        guard let product = product else{return}
+        let index = IndexPath(item: currentIndex, section: 0)
+        
+        //Checks if the current image index is not at the end of the image list.
+        print("CurrentIndex:\(currentIndex)")
+        print("Products Count:\(product.images.count)")
+        if currentIndex < product.images.count {
+            imageCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            currentIndex += 1
+            //self.pageControl.currentPage = self.currentIndex
+        }else{
+            currentIndex = 0
+            let index1 = IndexPath(item: currentIndex, section: 0)
+            imageCollectionView.scrollToItem(at: index1, at: .centeredHorizontally, animated: false)
+            // currentIndex = 1
+            //self.pageControl.currentPage = self.currentIndex
+            
+        }
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let page = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        pageControl.currentPage = page
+    }
+    
+    @IBAction func pageControlChanged(_ sender: UIPageControl) {
+        let indexPath = IndexPath(item: sender.currentPage, section: 0)
+        imageCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        currentIndex = sender.currentPage
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,58 +88,39 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalImageScroll", for: indexPath) as! HorizontalImageScroll
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalImageScroll.identifier, for: indexPath) as! HorizontalImageScroll
         if let imageUrl = product?.images[indexPath.row] {
             cell.configure(with: imageUrl)
         }
         print(product?.images[indexPath.row] ?? "plant")
         return cell
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//           return imageCollectionView.frame.size
-//       }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
-
-//    private func loadImage(from urlString: String) {
-//        guard let url = URL(string: urlString) else {
-//            self.image1.image = UIImage(named: "plant")
-//            return
-//        }
-//
-//        // Optional: set placeholder
-//        self.image1.image = UIImage(named: "plant")
-//
-//        // Start background download
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            guard let data = data, error == nil, let image = UIImage(data: data) else {
-//                DispatchQueue.main.async {
-//                    self.image1.image = UIImage(named: "plant") // fallback
-//                }
-//                return
-//            }
-//
-//            DispatchQueue.main.async {
-//                self.image1.image = image
-//            }
-//        }.resume()
-//    }
-//
-//    
-//
-//    
-//    private func downloadImage(from url: URL) async -> UIImage? {
-//        do {
-//            let (data, _) = try await URLSession.shared.data(from: url)
-//            return UIImage(data: data)
-//        } catch {
-//            print("Failed to download image:", error)
-//            return UIImage(named: "default")
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
     
-
+    @IBAction func cartButtonTapped(sender: UIButton){
+        if let tabBarController = self.view.window?.rootViewController as? UITabBarController {
+            tabBarController.selectedIndex = 2
+            // Change this to your Cart tab index
+            
+            // Optional: Dismiss if presented modally
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
     
-
 }
+
