@@ -202,7 +202,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="DNS-Y6-BIS" firstAttribute="top" secondItem="thv-pl-tRP" secondAttribute="bottom" constant="10" id="15G-Jf-7Ek"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ma4-bj-FVk" secondAttribute="bottom" constant="10" id="1Mt-sU-CRJ"/>
@@ -477,7 +477,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Div-aL-en2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="J7f-Bp-x9w" firstAttribute="top" secondItem="nwV-IU-49r" secondAttribute="bottom" constant="10" id="03s-dX-Lst"/>
                             <constraint firstItem="P4y-nh-ye7" firstAttribute="leading" secondItem="Div-aL-en2" secondAttribute="leading" constant="20" id="0xu-rD-ArJ"/>
@@ -554,7 +554,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ty6-DJ-GUA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </view>
                     <navigationItem key="navigationItem" title="Product Details" id="xcI-YV-Oy4"/>
                 </viewController>
@@ -572,8 +572,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="sDJ-NQ-HXy" kind="relationship" relationship="viewControllers" id="Xkp-FS-YCI"/>
-                        <segue destination="CzY-OG-ZmS" kind="relationship" relationship="viewControllers" id="nva-m2-kJ9"/>
                         <segue destination="ZVy-Jh-7UZ" kind="relationship" relationship="viewControllers" id="NWh-uu-FRK"/>
+                        <segue destination="CzY-OG-ZmS" kind="relationship" relationship="viewControllers" id="nva-m2-kJ9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7Z-Mj-JmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -598,7 +598,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BxN-an-QRq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="XEr-CF-ClQ" firstAttribute="leading" secondItem="BxN-an-QRq" secondAttribute="leading" constant="100" id="a5d-dj-RGG"/>
                             <constraint firstItem="BxN-an-QRq" firstAttribute="trailing" secondItem="XEr-CF-ClQ" secondAttribute="trailing" constant="100" id="fBe-i1-Hzn"/>
@@ -612,10 +612,10 @@
             </objects>
             <point key="canvasLocation" x="2525" y="2092"/>
         </scene>
-        <!--back-->
+        <!--Products-->
         <scene sceneID="scY-mS-hXM">
             <objects>
-                <viewController storyboardIdentifier="productVC" id="LmD-DZ-5de" customClass="ProductViewController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productVC" id="LmD-DZ-5de" userLabel="Products" customClass="ProductViewController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WqG-Ft-WNp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -637,13 +637,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="191" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <size key="customSize" width="191" height="214"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m8g-qh-qjv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="Id0-9b-z6Q" firstAttribute="top" secondItem="m8g-qh-qjv" secondAttribute="top" id="0en-QX-iDX"/>
                             <constraint firstItem="m8g-qh-qjv" firstAttribute="trailing" secondItem="Id0-9b-z6Q" secondAttribute="trailing" id="4r8-hV-FUz"/>
@@ -651,7 +652,7 @@
                             <constraint firstItem="m8g-qh-qjv" firstAttribute="bottom" secondItem="Id0-9b-z6Q" secondAttribute="bottom" id="uSr-Mq-56q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="back" id="3xO-G1-qO0"/>
+                    <navigationItem key="navigationItem" title="back" id="3xO-G1-qO0" userLabel="Products"/>
                     <connections>
                         <outlet property="collectionView1" destination="Id0-9b-z6Q" id="dFl-aJ-1MK"/>
                     </connections>
@@ -674,7 +675,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="SVv-r2-J7R"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0s-2U-jBW">
@@ -683,13 +684,13 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Cso-hy-ix8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MT-nC-NXu">
                                 <rect key="frame" x="40" y="109" width="313" height="26.333333333333343"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izG-Lf-yMr">
@@ -698,7 +699,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="LDd-qE-pOi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wj3-gl-imx">
@@ -727,6 +728,7 @@
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zq4-vq-ziQ">
                                 <rect key="frame" x="160" y="435.33333333333331" width="73" height="26"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="HqP-Ta-btc"/>
                                 </constraints>
@@ -749,7 +751,7 @@
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="cartButtonTappedWithSender:" destination="30f-Py-eHB" eventType="touchUpInside" id="PtT-yX-HKc"/>
+                                            <action selector="cartButtonTappedWithSender:" destination="30f-Py-eHB" eventType="touchUpInside" id="xKR-85-muI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -782,9 +784,13 @@
                                     <constraint firstAttribute="height" constant="40" id="hKM-rw-Z1F"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zsT-So-54e">
+                                <rect key="frame" x="126" y="762" width="52" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tl0-pI-dg7"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="izG-Lf-yMr" firstAttribute="leading" secondItem="tl0-pI-dg7" secondAttribute="leading" constant="20" id="0DY-VJ-dlE"/>
                             <constraint firstItem="W53-sD-AsS" firstAttribute="leading" secondItem="tl0-pI-dg7" secondAttribute="leading" constant="10" id="0ke-RJ-6nz"/>
@@ -830,7 +836,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JxF-34-Nmn">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="164" width="393" height="605"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoriesTableViewCell" rowHeight="333" id="dD6-C2-U2C" customClass="CategoriesTableViewCell" customModule="PlantApp" customModuleProvider="target">
@@ -850,6 +856,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="sWP-SA-HQr" secondAttribute="trailing" constant="5" id="A9d-F6-2L7"/>
                                                         <constraint firstItem="sWP-SA-HQr" firstAttribute="leading" secondItem="B72-Xd-z6a" secondAttribute="leading" constant="5" id="Hcf-ti-x50"/>
@@ -870,18 +877,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KKl-50-Dmm">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="14S-X9-j8h" id="MSK-Tu-PYf"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NW4-SE-Cqe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NW4-SE-Cqe" firstAttribute="trailing" secondItem="JxF-34-Nmn" secondAttribute="trailing" id="9QS-HL-Gli"/>
-                            <constraint firstItem="NW4-SE-Cqe" firstAttribute="bottom" secondItem="JxF-34-Nmn" secondAttribute="bottom" id="TcN-co-p2U"/>
-                            <constraint firstItem="JxF-34-Nmn" firstAttribute="leading" secondItem="NW4-SE-Cqe" secondAttribute="leading" id="bRo-Z4-mWT"/>
-                            <constraint firstItem="JxF-34-Nmn" firstAttribute="top" secondItem="NW4-SE-Cqe" secondAttribute="top" id="m6p-xB-Du9"/>
+                            <constraint firstItem="JxF-34-Nmn" firstAttribute="leading" secondItem="NW4-SE-Cqe" secondAttribute="leading" id="7gQ-CY-yIG"/>
+                            <constraint firstItem="KKl-50-Dmm" firstAttribute="top" secondItem="NW4-SE-Cqe" secondAttribute="top" id="S9W-Y0-Quj"/>
+                            <constraint firstItem="JxF-34-Nmn" firstAttribute="top" secondItem="KKl-50-Dmm" secondAttribute="bottom" constant="5" id="bpO-ce-IhH"/>
+                            <constraint firstItem="JxF-34-Nmn" firstAttribute="bottom" secondItem="NW4-SE-Cqe" secondAttribute="bottom" id="d5l-9A-Gj9"/>
+                            <constraint firstItem="KKl-50-Dmm" firstAttribute="trailing" secondItem="NW4-SE-Cqe" secondAttribute="trailing" id="dM4-O5-jy0"/>
+                            <constraint firstItem="KKl-50-Dmm" firstAttribute="leading" secondItem="NW4-SE-Cqe" secondAttribute="leading" id="gHB-Xu-NeW"/>
+                            <constraint firstItem="JxF-34-Nmn" firstAttribute="trailing" secondItem="NW4-SE-Cqe" secondAttribute="trailing" id="i7k-A1-oPU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Catagory" id="Yrs-ww-Kqs"/>
                     <connections>
+                        <outlet property="searchBar" destination="KKl-50-Dmm" id="HWV-Wu-iUO"/>
                         <outlet property="tableView" destination="JxF-34-Nmn" id="b4K-HV-Kc3"/>
                     </connections>
                 </viewController>
@@ -945,10 +962,10 @@
             </objects>
             <point key="canvasLocation" x="8" y="2753"/>
         </scene>
-        <!--Cart View Controller-->
+        <!--Cart Items-->
         <scene sceneID="YMC-HL-Bky">
             <objects>
-                <viewController id="HmW-IN-4qR" customClass="CartViewController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" id="HmW-IN-4qR" customClass="CartViewController" customModule="PlantApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p1q-PA-ITB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -957,25 +974,27 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cCu-G9-ghI">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="254" height="258"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CartCollectionViewCell" id="isE-1P-Tog">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <rect key="frame" x="71.666666666666671" y="0.0" width="250" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xl0-Xz-Axb">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <size key="customSize" width="250" height="250"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jqq-4b-V4P"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="dgU-ir-UsV" firstAttribute="top" secondItem="jqq-4b-V4P" secondAttribute="top" id="JV4-Yl-Zt8"/>
                             <constraint firstItem="jqq-4b-V4P" firstAttribute="trailing" secondItem="dgU-ir-UsV" secondAttribute="trailing" id="aeR-J2-SYG"/>
@@ -983,14 +1002,14 @@
                             <constraint firstItem="jqq-4b-V4P" firstAttribute="bottom" secondItem="dgU-ir-UsV" secondAttribute="bottom" id="wQj-Go-QMc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ahe-ib-pJG"/>
+                    <navigationItem key="navigationItem" title="Cart Items" id="Ahe-ib-pJG"/>
                     <connections>
                         <outlet property="collectionView" destination="dgU-ir-UsV" id="TGF-IL-6Y2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0e-n7-TZ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982" y="2753"/>
+            <point key="canvasLocation" x="980.91603053435108" y="2752.816901408451"/>
         </scene>
     </scenes>
     <resources>
@@ -1001,17 +1020,23 @@
         <image name="google" width="48" height="48"/>
         <image name="plant" width="100" height="100"/>
         <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

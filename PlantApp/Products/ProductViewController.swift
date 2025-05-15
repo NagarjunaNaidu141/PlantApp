@@ -11,6 +11,8 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     var selectedCategory: CategoriesModel2?
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    
     
     @IBOutlet weak var collectionView1: UICollectionView!
     
@@ -35,7 +37,7 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView1.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
             let product = products[indexPath.item]
-            cell.backgroundColor = .white
+            //cell.backgroundColor = .white
             cell.configure(with: product)
             return cell
         }
@@ -55,63 +57,82 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
         
-        func callProductsAPI(){
-            // step 1
-            let urlString = "https://api.escuelajs.co/api/v1/products?categoryId=\(selectedCategory?.id ?? 1)"
-            
-            // step 2
-            guard let url = URL(string: urlString) else {
-                print("Invalid URL")
-                return
-            }
-            
-            // step 3
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                
-                guard let data = data else {
-                    return
-                }
-                do {
-                    let decoder = JSONDecoder()
-                    let products = try decoder.decode([ProductModel].self, from: data)
-                    self.products = products
-                    DispatchQueue.main.async {
-                        self.collectionView1.reloadData()
-                    }
-                    
-                    
-                } catch {
-                    
-                }
-            }
-            task.resume()
-            
+    func callProductsAPI(){
+        // step 1
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        let urlString = "https://api.escuelajs.co/api/v1/products?categoryId=\(selectedCategory?.id ?? 1)"
+//        ApiServices.shared.fetchData(from: urlString, model: [ProductModel].self){ [weak self] result in
+//            // Step 3: Handle the result
+//            DispatchQueue.main.async {
+//                self?.activityIndicator.stopAnimating()
+//                self?.activityIndicator.isHidden = true
+//                
+//                switch result {
+//                case .success(let fetchedProducts):
+//                    // Store the result in the products property
+//                    self?.products = fetchedProducts
+//                    // Optionally, update the UI (e.g., reload a table view)
+//                    // self?.tableView.reloadData()
+//                case .failure(let error):
+//                    // Handle the error (e.g., show an alert)
+//                    print("Error fetching products: \(error.localizedDescription)")
+//                }
+//            }
+             //step 2
+                        guard let url = URL(string: urlString) else {
+                            print("Invalid URL")
+                            return
+                        }
+                        
+                        // step 3
+                        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in  DispatchQueue.main.async {
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.isHidden = true
+                            
+                        }
+                            
+                            guard let data = data else {
+                                return
+                            }
+                            do {
+                                let decoder = JSONDecoder()
+                                let products = try decoder.decode([ProductModel].self, from: data)
+                                self.products = products
+                                DispatchQueue.main.async {
+                                    self.collectionView1.reloadData()
+                                }
+                                
+                                
+                            } catch {
+                                
+                            }
+                        }
+                        task.resume()
+                        
         }
-    
-    private func loadImage(from url: String) -> UIImage? {
-        
-        guard let url = URL(string: url) else {
-            return UIImage(named: "plant")
-        }
-        Task {
-            if let loadedImage = await downloadImage(from: url) {
-                return loadedImage
-            }
-            return UIImage(named: "plant")!
-        }
-        return UIImage(named: "plant")
     }
+extension ProductViewController: UICollectionViewDelegateFlowLayout {
     
+    // Cell spacing from edges
     
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
+    }
 
-    
-    private func downloadImage(from url: URL) async -> UIImage? {
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            return UIImage(data: data)
-        } catch {
-            print("Failed to download image:", error)
-            return UIImage(named: "default")
-        }
+    // Vertical spacing between rows
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
+
+//    // Horizontal spacing between items
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
+}

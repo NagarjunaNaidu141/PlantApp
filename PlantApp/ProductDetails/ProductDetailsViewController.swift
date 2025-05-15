@@ -46,8 +46,21 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
         
         
     }
+    func stopAutoScroll(){
+        timer?.invalidate()
+        timer = nil
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopAutoScroll()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startAutoScroll()
+    }
     func startAutoScroll(){
+        guard timer == nil else { return }
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
     }
     @objc func scrollAutomatically(){
@@ -96,7 +109,7 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
         return cell
     }
     
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
@@ -113,13 +126,12 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     @IBAction func cartButtonTapped(sender: UIButton){
-        if let tabBarController = self.view.window?.rootViewController as? UITabBarController {
-            tabBarController.selectedIndex = 2
-            // Change this to your Cart tab index
-            
-            // Optional: Dismiss if presented modally
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        guard let product = product else { return }
+        
+        CartManager.shared.addCartItem(product: product)
+        let alert = UIAlertController(title: "Success", message: "Product added to cart", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
     }
     
 }

@@ -24,19 +24,19 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJw-ts-TPx">
-                        <rect key="frame" x="5" y="166.33333333333334" width="184" height="21"/>
+                        <rect key="frame" x="5" y="136.33333333333334" width="184" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" systemColor="systemOrangeColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLO-uj-1cf">
-                        <rect key="frame" x="5" y="125.33333333333331" width="184" height="21"/>
+                        <rect key="frame" x="5" y="105.33333333333333" width="184" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" systemColor="systemYellowColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-7f-eGe">
-                        <rect key="frame" x="5" y="85" width="184" height="20.333333333333329"/>
+                        <rect key="frame" x="5" y="75" width="184" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" systemColor="systemPurpleColor"/>
                         <nil key="highlightedColor"/>
@@ -44,6 +44,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemGray5Color"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="rf7-7f-eGe" secondAttribute="trailing" constant="5" id="70i-SY-Sz0"/>
                 <constraint firstAttribute="trailing" secondItem="20L-9x-IjR" secondAttribute="trailing" id="DXd-tU-9gT"/>
@@ -51,15 +52,15 @@
                 <constraint firstItem="oLO-uj-1cf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="JVM-Ta-9fo"/>
                 <constraint firstAttribute="trailing" secondItem="GJw-ts-TPx" secondAttribute="trailing" constant="5" id="KA3-jA-47P"/>
                 <constraint firstItem="rf7-7f-eGe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="NWO-Rv-41f"/>
-                <constraint firstItem="oLO-uj-1cf" firstAttribute="top" secondItem="rf7-7f-eGe" secondAttribute="bottom" constant="20" id="QXq-5O-HYP"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GJw-ts-TPx" secondAttribute="bottom" constant="10" id="OFm-ln-oix"/>
+                <constraint firstItem="oLO-uj-1cf" firstAttribute="top" secondItem="rf7-7f-eGe" secondAttribute="bottom" constant="10" id="QXq-5O-HYP"/>
                 <constraint firstItem="GJw-ts-TPx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="U3Y-VP-Dzm"/>
                 <constraint firstItem="20L-9x-IjR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vaj-bh-qQk"/>
                 <constraint firstItem="GJw-ts-TPx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="aEO-mp-hoO"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GJw-ts-TPx" secondAttribute="bottom" constant="10" id="bAr-8Q-Coh"/>
-                <constraint firstItem="GJw-ts-TPx" firstAttribute="top" secondItem="oLO-uj-1cf" secondAttribute="bottom" constant="20" id="mXg-mZ-59q"/>
+                <constraint firstItem="GJw-ts-TPx" firstAttribute="top" secondItem="oLO-uj-1cf" secondAttribute="bottom" constant="10" id="mXg-mZ-59q"/>
                 <constraint firstAttribute="trailing" secondItem="oLO-uj-1cf" secondAttribute="trailing" constant="5" id="orf-cx-5DQ"/>
                 <constraint firstItem="rf7-7f-eGe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sZc-1T-JLY"/>
-                <constraint firstItem="rf7-7f-eGe" firstAttribute="top" secondItem="20L-9x-IjR" secondAttribute="bottom" constant="20" id="v98-K4-kps"/>
+                <constraint firstItem="rf7-7f-eGe" firstAttribute="top" secondItem="20L-9x-IjR" secondAttribute="bottom" constant="10" id="v98-K4-kps"/>
                 <constraint firstItem="20L-9x-IjR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="wTH-yE-YgB"/>
             </constraints>
             <size key="customSize" width="194" height="297"/>
@@ -73,6 +74,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
