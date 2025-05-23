@@ -22,6 +22,9 @@ struct Category: Codable {
     let slug: String
 }
 
+class abc {
+    
+}
 
 //[
 //  {

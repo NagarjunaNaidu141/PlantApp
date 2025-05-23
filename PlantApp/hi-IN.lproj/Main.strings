@@ -1,0 +1,135 @@
+
+/* Class = "UIButton"; configuration.title = "Forgot Password ?"; ObjectID = "0hq-vh-eJV"; */
+"0hq-vh-eJV.configuration.title" = "Forgot Password ?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0hq-vh-eJV"; */
+"0hq-vh-eJV.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "back"; ObjectID = "3xO-G1-qO0"; */
+"3xO-G1-qO0.title" = "back";
+
+/* Class = "UIButton"; configuration.title = "Back to Sign In"; ObjectID = "7dO-cm-BhK"; */
+"7dO-cm-BhK.configuration.title" = "Back to Sign In";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7dO-cm-BhK"; */
+"7dO-cm-BhK.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "category"; ObjectID = "7mm-Zg-g6G"; */
+"7mm-Zg-g6G.title" = "category";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "8Na-mS-GrU"; */
+"8Na-mS-GrU.placeholder" = "Enter Password";
+
+/* Class = "UIButton"; configuration.title = "ADD TO CART"; ObjectID = "8ip-Ga-4iv"; */
+"8ip-Ga-4iv.configuration.title" = "ADD TO CART";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8ip-Ga-4iv"; */
+"8ip-Ga-4iv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Product Details"; ObjectID = "9MT-nC-NXu"; */
+"9MT-nC-NXu.text" = "Product Details";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "9li-w3-LFo"; */
+"9li-w3-LFo.text" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9qL-dl-kI4"; */
+"9qL-dl-kI4.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Cart Items"; ObjectID = "Ahe-ib-pJG"; */
+"Ahe-ib-pJG.title" = "Cart Items";
+
+/* Class = "UITabBarItem"; title = "Cart Items"; ObjectID = "B7x-Fa-wbo"; */
+"B7x-Fa-wbo.title" = "Cart Items";
+
+/* Class = "UITextField"; placeholder = "Enter Your Email Address"; ObjectID = "DNS-Y6-BIS"; */
+"DNS-Y6-BIS.placeholder" = "Enter Your Email Address";
+
+/* Class = "UILabel"; text = "Conform Password"; ObjectID = "DXk-LF-Rzc"; */
+"DXk-LF-Rzc.text" = "Conform Password";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "F0s-2U-jBW"; */
+"F0s-2U-jBW.text" = "Price";
+
+/* Class = "UIButton"; configuration.title = "Create Account"; ObjectID = "Ma4-bj-FVk"; */
+"Ma4-bj-FVk.configuration.title" = "Create Account";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ma4-bj-FVk"; */
+"Ma4-bj-FVk.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "NJI-v3-hFG"; */
+"NJI-v3-hFG.placeholder" = "Enter Password";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OjN-XO-8XJ"; */
+"OjN-XO-8XJ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Email Address"; ObjectID = "P4y-nh-ye7"; */
+"P4y-nh-ye7.text" = "Email Address";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Wt6-z9-yr7"; */
+"Wt6-z9-yr7.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Logout"; ObjectID = "X8y-mM-cbP"; */
+"X8y-mM-cbP.title" = "Logout";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "XEr-CF-ClQ"; */
+"XEr-CF-ClQ.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XEr-CF-ClQ"; */
+"XEr-CF-ClQ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Sign Up"; ObjectID = "Y7D-CF-hdk"; */
+"Y7D-CF-hdk.configuration.title" = "Sign Up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Y7D-CF-hdk"; */
+"Y7D-CF-hdk.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Catagory"; ObjectID = "Yrs-ww-Kqs"; */
+"Yrs-ww-Kqs.title" = "Catagory";
+
+/* Class = "UITextField"; placeholder = "Enter Your Email Address"; ObjectID = "ZOV-Vp-cRN"; */
+"ZOV-Vp-cRN.placeholder" = "Enter Your Email Address";
+
+/* Class = "UILabel"; text = "Other Ways to sign in"; ObjectID = "eOD-gB-iFy"; */
+"eOD-gB-iFy.text" = "Other Ways to sign in";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "gCf-4m-pwy"; */
+"gCf-4m-pwy.placeholder" = "Enter Password";
+
+/* Class = "UILabel"; text = "Already have an Account?"; ObjectID = "gi1-T0-NnX"; */
+"gi1-T0-NnX.text" = "Already have an Account?";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "izG-Lf-yMr"; */
+"izG-Lf-yMr.text" = "Price";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "kIj-XJ-6DH"; */
+"kIj-XJ-6DH.text" = "Price";
+
+/* Class = "UIButton"; configuration.title = "Sign in"; ObjectID = "l0C-y4-Lpr"; */
+"l0C-y4-Lpr.configuration.title" = "Sign in";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "l0C-y4-Lpr"; */
+"l0C-y4-Lpr.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "lGd-Rm-N8M"; */
+"lGd-Rm-N8M.text" = "Password";
+
+/* Class = "UILabel"; text = "Dont have an Account?"; ObjectID = "ncO-5m-SEQ"; */
+"ncO-5m-SEQ.text" = "Dont have an Account?";
+
+/* Class = "UILabel"; text = "Other Ways to sign in"; ObjectID = "nwV-IU-49r"; */
+"nwV-IU-49r.text" = "Other Ways to sign in";
+
+/* Class = "UIButton"; configuration.title = "BUY NOW"; ObjectID = "ovB-Mn-3Rp"; */
+"ovB-Mn-3Rp.configuration.title" = "BUY NOW";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ovB-Mn-3Rp"; */
+"ovB-Mn-3Rp.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sWP-SA-HQr"; */
+"sWP-SA-HQr.text" = "Label";
+
+/* Class = "UILabel"; text = "Email Address"; ObjectID = "thv-pl-tRP"; */
+"thv-pl-tRP.text" = "Email Address";
+
+/* Class = "UINavigationItem"; title = "Product Details"; ObjectID = "xcI-YV-Oy4"; */
+"xcI-YV-Oy4.title" = "Product Details";

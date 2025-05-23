@@ -6,6 +6,7 @@ target 'PlantApp' do
   use_frameworks!
 pod 'IQKeyboardManagerSwift'
 pod 'Kingfisher'
+pod 'MBProgressHUD'
 
   # Pods for PlantApp
 

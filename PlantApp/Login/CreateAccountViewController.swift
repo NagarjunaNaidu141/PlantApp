@@ -68,7 +68,7 @@ class CreateAccountViewController: UIViewController {
 //    func showAlert(_ message: String){
 //        errorLabel.isHidden = false
 //            errorLabel.text = message
-//      
+//
 //    }
     func showAlert(_ messgae: String){
         let alert = UIAlertController(title: "Alert", message: messgae, preferredStyle: .alert)

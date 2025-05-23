@@ -37,6 +37,8 @@ class ProductViewController: UIViewController, UICollectionViewDataSource, UICol
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView1.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
             let product = products[indexPath.item]
+            cell.layer.cornerRadius = 10
+            cell.layer.masksToBounds = true
             //cell.backgroundColor = .white
             cell.configure(with: product)
             return cell

@@ -40,10 +40,12 @@ PODS:
   - IQTextView (1.0.5):
     - IQKeyboardToolbar/Placeholderable
   - Kingfisher (8.3.2)
+  - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
+  - MBProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -56,6 +58,7 @@ SPEC REPOS:
     - IQTextInputViewNotification
     - IQTextView
     - Kingfisher
+    - MBProgressHUD
 
 SPEC CHECKSUMS:
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
@@ -67,7 +70,8 @@ SPEC CHECKSUMS:
   IQTextInputViewNotification: f5e954d8881fd9808b744e49e024cc0d4bcfe572
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
   Kingfisher: 0621d0ac0c78fecb19f6dc5303bde2b52abaf2f5
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: 759ad26012512357f73fbf88dd87d84fb5d03ac3
+PODFILE CHECKSUM: cebe1278de9082817266e461b6d41ee3c25fc141
 
 COCOAPODS: 1.16.2

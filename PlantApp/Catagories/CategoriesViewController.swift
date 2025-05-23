@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MBProgressHUD
+//MBProgressHUD pod is to display progress indicators on ios and macos app, while background task is in progress
 
 class CategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -23,6 +25,10 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         searchBar.delegate = self
         
+        tableView.register(CategoriesTableViewCell.nib(), forCellReuseIdentifier: CategoriesTableViewCell.identifier)
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
+
         callCatogoriesAPI()
         // Do any additional setup after loading the view.
     }
@@ -37,9 +43,12 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesTableViewCell", for: indexPath) as! CategoriesTableViewCell
         let item = isfilterd ? filteredCatagories[indexPath.section] : catagories[indexPath.section]
-        cell.titleLable.text = item.name
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 10
+        cell.configure(with: item)
+        //cell.textLabel?.text = item.name
+        print("image \(item.image ?? " ")")
+    
+        cell.backgroundColor = .systemGray5
+        cell.layer.cornerRadius = 20
         cell.layer.masksToBounds = true
         return cell
     }
@@ -53,21 +62,33 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             self.navigationController?.pushViewController(productVC, animated: true )
         }
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 12
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = UIView()
-        footer.backgroundColor = .clear
-        return footer
-    }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.contentView.layoutMargins = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 2
+//    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView()
+//        view.backgroundColor = .gray
+//        return view
+//    }
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 5
+//    }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footer = UIView()
+//        footer.backgroundColor = .clear
+//        return footer
+//    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        cell.contentView.layoutMargins = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
+////        let margin: CGFloat = 16
+////            let frame = cell.frame
+////            cell.frame = frame.inset(by: UIEdgeInsets(top: 0, left: margin, bottom: 0, right: margin))
+//        }
+//    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText : String ){
         if searchText.isEmpty {
             isfilterd = false
@@ -82,6 +103,11 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func callCatogoriesAPI(){
+        
+        DispatchQueue.main.async{
+            //show loader
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         // step 1
@@ -90,6 +116,10 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         ApiServices.shared.fetchData(from: urlString, model: [CategoriesModel2].self) { (result) in
             //switch to handle response
+            //hide loader
+            DispatchQueue.main.async{
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
             switch result{
                 /*
                  If the API call and decoding are successful:

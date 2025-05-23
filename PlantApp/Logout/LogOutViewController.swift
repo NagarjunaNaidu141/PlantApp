@@ -8,11 +8,15 @@
 import UIKit
 
 class LogOutViewController: UIViewController {
+    var localizedUserDefaultKey = "localizedUserDefaultKey"
+    var localizedDefaultLanguage = "en"
 
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        localizedDefaultLanguage = UserDefaults.standard.string(forKey: localizedUserDefaultKey) ?? "en"
+        
     }
     
 
@@ -31,5 +35,34 @@ class LogOutViewController: UIViewController {
             }
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        refreshLanguage()
+    }
+    @IBAction func englishLanguageButton(_ sender: UIButton) {
+        localizedDefaultLanguage = "en"
+        UserDefaults.standard.setValue(localizedDefaultLanguage, forKey: localizedUserDefaultKey)
+        refreshLanguage()
+    }
+    @IBAction func hindiLanguageButton(_ sender: UIButton) {
+        localizedDefaultLanguage = "hi-IN"
+        UserDefaults.standard.setValue(localizedDefaultLanguage, forKey: localizedUserDefaultKey)
+        refreshLanguage()
+        
+    }
     
+    private func refreshLanguage(){
+        label.text = "message".translated()
+    }
+    
+}
+extension String{
+    func translated() -> String{
+        let languageCode = UserDefaults.standard.string(forKey: "localizedUserDefaultKey") ?? "hi-IN"
+        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"), let bundle = Bundle(path: path) {
+            return NSLocalizedString(self, bundle: bundle, comment: "")
+        }
+        
+        return ""
+    }
 }

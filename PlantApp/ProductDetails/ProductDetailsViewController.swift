@@ -34,6 +34,7 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
             productCategoryName.text = product.category.name
             pageControl.numberOfPages = product.images.count
             pageControl.currentPage = 0
+            pageControl.isHidden = product.images.count <= 1
         }
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self

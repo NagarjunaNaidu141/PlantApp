@@ -33,11 +33,15 @@ class CartViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.identifier, for: indexPath) as! CartCollectionViewCell
         let product = CartManager.shared.getCartItems()[indexPath.item]
         cell.configure(with: product)
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         cell.delegate = self
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 200) // Adjust height as needed
+        let horizontalInset: CGFloat = 16 * 2
+        let width = collectionView.frame.width - horizontalInset
+        return CGSize(width: width, height: 200) // Adjust height as needed
     }
 
     func collectionView(_ collectionView: UICollectionView,
